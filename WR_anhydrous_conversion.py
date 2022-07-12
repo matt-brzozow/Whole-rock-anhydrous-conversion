@@ -402,7 +402,7 @@ if uploaded_file is not None:
     Li_anh_MORB = Li_anh/4.3
 
 #####################################################################################################
-# Combined data into a dataframe
+# Combine data into a dataframe
 #####################################################################################################
 
 if uploaded_file is not None:

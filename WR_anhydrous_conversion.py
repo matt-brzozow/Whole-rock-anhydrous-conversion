@@ -26,15 +26,14 @@ st.subheader("Important - read first")
 with st.expander("Important - read first"):
     st.write("")
     st.write("The script was created based on a certain set of elements. If your worksheet does not have some of the elements, add a blank column for those elements, otherwise there will be errors in the script.")
+    st.write("Remove any headings from your raw csv file. The first row should be your elements and your data should start on the second row.")
+    st.write("The script takes all < symbols and replaces the cell with a 0.")
     st.write("-------------")
     st.write("MAJOR AND MINOR ELEMENTS")
     st.write("SiO2,	Al2O3,	Fe2O3,	CaO,	MgO,	Na2O,	K2O,	Cr2O3,	TiO2,	MnO,	P2O5,	SrO,	BaO,	LOI,	Total")
     st.write("-------------")
     st.write("TRACE ELEMENTS")
     st.write("C,	S,	Ba,	Ce,	Cr,	Cs,	Dy,	Er, Eu,	Ga,	Gd,	Ge,	Hf,	Ho,	La,	Lu,	Nb,	Nd,	Pr,	Rb,	Sm,	Sn,	Sr,	Ta,	Tb,	Th,	Tm,	U,	V,	W,	Y,	Yb,	Zr,	As,	Bi,	Hg,	In,	Re,	Sb,	Se,	Te, Tl,	Ag,	Cd,	Co,	Cu,	Li,	Mo,	Ni,	Pb,	Sc,	Zn")
-    st.write("-------------")
-    st.write("The script takes all < symbols and replaces the cell with a 0.")
-    st.write("")
 
 st.write("-------------")
 st.write("")
@@ -48,7 +47,7 @@ st.subheader("Upload your data as a CSV")
 uploaded_file = st.file_uploader(label = "", type = "csv")
 
 if uploaded_file is not None:
-    data = pd.read_csv(uploaded_file, skiprows = [0, 1, 2, 3, 4, 5, 6, 7, 9 ])
+    data = pd.read_csv(uploaded_file)
 
 #####################################################################################################
 # Data clean-up

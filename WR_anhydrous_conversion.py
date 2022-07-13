@@ -12,7 +12,7 @@ import numpy as np
 
 st.set_page_config(page_title = "Whole-rock anhdyrous conversion", layout="wide")
 st.title("Whole-rock anhdyrous conversion")
-st.write("Contact Information: Matthew Brzozowski | matt.brzozow@gmail.com")
+st.write("Contact Information: Matthew Brzozowski, PhD | matt.brzozow@gmail.com")
 
 st.write("-------------")
 st.write("")

@@ -12,6 +12,7 @@ import numpy as np
 
 st.set_page_config(page_title = "Whole-rock anhdyrous conversion", layout="wide")
 st.title("Whole-rock anhdyrous conversion")
+st.write("Contact Information: Matthew Brzozowski | matt.brzozow@gmail.com")
 
 st.write("-------------")
 st.write("")
@@ -23,11 +24,17 @@ st.write("")
 st.subheader("Important - read first")
 
 with st.expander("Important - read first"):
-    st.write("The script was created based on a certain set of elements. If your worksheet does not have some of the elements, add a blank column for those elements, otherwise there will be errors in the script")
+    st.write("")
+    st.write("The script was created based on a certain set of elements. If your worksheet does not have some of the elements, add a blank column for those elements, otherwise there will be errors in the script.")
+    st.write("-------------")
     st.write("MAJOR AND MINOR ELEMENTS")
     st.write("SiO2,	Al2O3,	Fe2O3,	CaO,	MgO,	Na2O,	K2O,	Cr2O3,	TiO2,	MnO,	P2O5,	SrO,	BaO,	LOI,	Total")
+    st.write("-------------")
     st.write("TRACE ELEMENTS")
     st.write("C,	S,	Ba,	Ce,	Cr,	Cs,	Dy,	Er, Eu,	Ga,	Gd,	Ge,	Hf,	Ho,	La,	Lu,	Nb,	Nd,	Pr,	Rb,	Sm,	Sn,	Sr,	Ta,	Tb,	Th,	Tm,	U,	V,	W,	Y,	Yb,	Zr,	As,	Bi,	Hg,	In,	Re,	Sb,	Se,	Te, Tl,	Ag,	Cd,	Co,	Cu,	Li,	Mo,	Ni,	Pb,	Sc,	Zn")
+    st.write("-------------")
+    st.write("The script takes all < symbols and replaces the cell with a 0.")
+    st.write("")
 
 st.write("-------------")
 st.write("")
@@ -181,9 +188,6 @@ if uploaded_file is not None:
     data["Pb"] = data["Pb"].fillna(0)
     data["Sc"] = data["Sc"].fillna(0)
     data["Zn"] = data["Zn"].fillna(0)
-
-    st.subheader("Raw data")
-    st.dataframe(data)
 
 #####################################################################################################
 # Anhydrous calculation
@@ -616,6 +620,29 @@ if uploaded_file is not None:
     anhydrous_data["W_MORB"] = W_anh_MORB
     anhydrous_data["Li_MORB"] = Li_anh_MORB
 
+#####################################################################################################
+# Download data
+#####################################################################################################
+
+if uploaded_file is not None:
+
     st.write("-------------")
+
+    file_name = st.text_input(label = "Input file name (incude .csv)")
+
+    @st.cache
+    def convert_df(df):
+        return df.to_csv(index = False).encode("utf-8")
+
+    anhydrous_data_download = convert_df(anhydrous_data)
+    st.download_button(label = "Download anhydrous data", data = anhydrous_data_download, file_name = file_name, mime = "text/csv")
+
+    st.write("-------------")
+
+    st.subheader("Raw data")
+    st.dataframe(data)
+
+    st.write("-------------")
+
     st.subheader("Anhydrous data")
     st.dataframe(anhydrous_data)

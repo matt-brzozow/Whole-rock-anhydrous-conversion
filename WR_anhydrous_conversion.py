@@ -27,7 +27,7 @@ with st.expander("Important - read first"):
     st.write("")
     st.write("Remove any headings from your raw CSV file. The first row should be your elements and your data should start on the second row.")
     st.write("The script takes all < and > symbols and replaces the cell with a 0. If you want to treat the data differently, do these modifications before uploading the CSV for anhydrous conversion.")
-    st.write("Make sure your sample columns is labeled 'SAMPLE' (all capitals)")
+    st.write("Make sure your sample columns is labeled 'Sample' (case sensitive)")
     st.write("The script was created based on a certain set of elements. If your worksheet does not have some of the elements, add a blank column for those elements, otherwise there will be errors in the script.")
     st.write("-------------")
     st.write("MAJOR AND MINOR ELEMENTS")
@@ -413,7 +413,7 @@ if uploaded_file is not None:
 
     anhydrous_data = pd.DataFrame()
 
-    anhydrous_data["Sample"] = data.SAMPLE
+    anhydrous_data["Sample"] = data.Sample
     anhydrous_data["SiO2"] = SiO2_anh
     anhydrous_data["TiO2"] = TiO2_anh
     anhydrous_data["Al2O3"] = Al2O3_anh

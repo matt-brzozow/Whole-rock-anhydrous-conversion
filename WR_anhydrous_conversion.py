@@ -27,7 +27,7 @@ with st.expander("Important - read first"):
     st.write("")
     st.write("Remove any headings from your raw CSV file. The first row should be your elements and your data should start on the second row.")
     st.write("The script takes all < and > symbols and replaces the cell with a 0. If you want to treat the data differently, do these modifications before uploading the CSV for anhydrous conversion.")
-    st.write("Make sure your sample columns is labeled 'Sample' (case sensitive)")
+    st.write("Make sure your sample column is labeled 'Sample' (case sensitive).")
     st.write("The script was created based on a certain set of elements. If your worksheet does not have some of the elements, add a blank column for those elements, otherwise there will be errors in the script.")
     st.write("-------------")
     st.write("MAJOR AND MINOR ELEMENTS")

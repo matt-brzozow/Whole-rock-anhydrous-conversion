@@ -417,6 +417,7 @@ if uploaded_file is not None:
     anhydrous_data["SiO2"] = SiO2_anh
     anhydrous_data["TiO2"] = TiO2_anh
     anhydrous_data["Al2O3"] = Al2O3_anh
+    anhydrous_data["Fe2O3"] = Fe2O3_anh
     anhydrous_data["MnO"] = MnO_anh
     anhydrous_data["MgO"] = MgO_anh
     anhydrous_data["CaO"] = CaO_anh

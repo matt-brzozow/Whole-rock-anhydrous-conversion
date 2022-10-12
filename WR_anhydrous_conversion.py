@@ -213,6 +213,8 @@ if uploaded_file is not None:
 
     Mg_No = ((0.063 * MgO_anh) / 24.31) / ((((0.9 * Fe2O3_anh) * 0.6994) / 55.85) + ((0.063 * MgO_anh) / 24.31))
 
+    S_anh = data.S * LOI_Factor
+    C_anh = data.C * LOI_Factor
     Cr_anh = data.Cr * LOI_Factor
     Co_anh = data.Co * LOI_Factor
     Ni_anh = data.Ni * LOI_Factor

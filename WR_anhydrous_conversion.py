@@ -431,6 +431,8 @@ if uploaded_file is not None:
     anhydrous_data["BaO"] = BaO_anh
     anhydrous_data["Mg_No"] = Mg_No
     anhydrous_data["LOI Factor"] = LOI_Factor
+    anhydrous_data["S"] = S_anh
+    anhydrous_data["C"] = C_anh
     anhydrous_data["Cr"] = Cr_anh
     anhydrous_data["Co"] = Co_anh
     anhydrous_data["Ni"] = Ni_anh
